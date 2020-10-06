@@ -21,4 +21,10 @@ Route::get('/', function () {
 // aksi yg dijalankan saat url(/) diakses
 Route::get('/profile', function () {
     return 'This is my profile';
+})->name('profile');
+
+// route name
+// menggunakan route name untuk mengambil url
+Route::get('/tes', function () {
+    return route('profile');   
 });
