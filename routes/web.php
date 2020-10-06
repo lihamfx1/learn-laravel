@@ -28,3 +28,9 @@ Route::get('/profile', function () {
 Route::get('/tes', function () {
     return route('profile');   
 });
+
+// parameter (id)
+// mengakses url secara spesifik
+Route::get('/profile/{id}', function ($id) {
+    return $id;
+});
