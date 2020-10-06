@@ -12,7 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// default
 Route::get('/', function () {
     return view('welcome');
+});
+
+// closure
+// aksi yg dijalankan saat url(/) diakses
+Route::get('/profile', function () {
+    return 'This is my profile';
 });
