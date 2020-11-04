@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SiswaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,13 @@ Route::get('/tes', function () {
 Route::get('/profile/{id}', function ($id) {
     return $id;
 });
+
+// Route::get('/siswa', 'SiswaController@index');
+
+// controller
+// mengakses controller
+Route::get('form_siswa', [SiswaController::class, 'index']);
+Route::post('form_siswa',[SiswaController::class, 'store']);
+
+// resource
+// Route::resource('siswa', SiswaController::class);
