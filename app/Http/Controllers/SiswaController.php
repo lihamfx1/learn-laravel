@@ -7,6 +7,7 @@ use App\Models\Siswa;
 
 use Illuminate\Http\Request;
 
+
 class SiswaController extends Controller
 {
     /**
@@ -16,7 +17,8 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        return view('siswa.siswa');
+        $siswa = Siswa::all();
+        return view('siswa.index', compact('siswa'));
     }
 
     /**
@@ -26,7 +28,7 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        return view('siswa.siswa');        
+        return view('siswa.tambah_siswa');        
     }
 
     /**
@@ -46,7 +48,7 @@ class SiswaController extends Controller
         
         Siswa::create($request->all());
 
-        return redirect()->back();
+        return redirect('siswa')->with('status', 'Profile updated!');
     }
 
     /**
