@@ -44,8 +44,9 @@ Route::get('/profile/{id}', function ($id) {
 
 // controller
 // mengakses controller
-Route::get('form_siswa', [SiswaController::class, 'index']);
-Route::post('form_siswa',[SiswaController::class, 'store']);
+Route::get('siswa', [SiswaController::class, 'index']);
+Route::get('siswa/tambah',[SiswaController::class, 'create']);
+Route::post('siswa', [SiswaController::class, 'store']);
 
 // resource
-// Route::resource('siswa', SiswaController::class);
+// Route::resource('siswa', SiswaController::class)->only(['index', 'create', 'store']);
